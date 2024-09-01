@@ -1,5 +1,9 @@
 function reverseString(str) {
   // type your code here
+  if (str.length === 0)
+    return str;
+
+  return reverseString(str.slice(1)) + str[0];
 }
 
 if (require.main === module) {
@@ -11,6 +15,14 @@ if (require.main === module) {
 
   console.log("Expecting: 'ybabtac'");
   console.log("=>", reverseString('catbaby'));
+
+  console.log('');
+  console.log("Expecting: ''");
+  console.log("=>", reverseString(''));
+
+  console.log('');
+  console.log("Expecting: 'a'");
+  console.log("=>", reverseString('a'));
 }
 
 module.exports = reverseString;
